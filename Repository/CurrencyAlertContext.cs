@@ -1,5 +1,12 @@
-﻿namespace Repository;
+﻿using Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
-public class CurrencyAlertContext
+namespace Repository;
+
+public class CurrencyAlertContext: DbContext
 {
+    public DbSet<Currencies> Currencies { get; set; }
+
+    public CurrencyAlertContext(DbContextOptions<CurrencyAlertContext> options): 
+        base(options){}
 }

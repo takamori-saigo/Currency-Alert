@@ -1,5 +1,7 @@
 using Contract;
 using LoggerService;
+using Microsoft.EntityFrameworkCore;
+using Repository;
 
 namespace Currency_Alert.Extensions;
 
@@ -20,4 +22,9 @@ public static class ServiceExtensions
                     });
             }
         );
+
+    public static void ConfigureSqlConnection(this IServiceCollection service,
+        ConfigurationManager builderConfiguration) =>
+        service.AddDbContext<CurrencyAlertContext>(options => 
+            options.UseNpgsql(builderConfiguration.GetConnectionString("DefaultConnection")));
 }

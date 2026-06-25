@@ -9,6 +9,7 @@ LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(),"/nlo
 
 builder.Services.ConfigureLoggerManager();
 builder.Services.ConfigureCors();
+builder.Services.ConfigureSqlConnection(builder.Configuration);
 
 builder.Services.AddControllers();
 
