@@ -27,4 +27,7 @@ public static class ServiceExtensions
         ConfigurationManager builderConfiguration) =>
         service.AddDbContext<CurrencyAlertContext>(options => 
             options.UseNpgsql(builderConfiguration.GetConnectionString("DefaultConnection")));
+
+    public static void ConfigureRepositoryManager(this IServiceCollection service) =>
+        service.AddScoped<IManagerRepository, RepositoryManager>();
 }
