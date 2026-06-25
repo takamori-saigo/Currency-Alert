@@ -38,4 +38,7 @@ public static class ServiceExtensions
 
     public static void ConfigureControllers(this IServiceCollection service) =>
         service.AddControllers().AddApplicationPart(typeof(AssemblyReference).Assembly);
+    
+    public static void ConfigureAutoMapper(this IServiceCollection service) =>
+        service.AddAutoMapper(typeof(Program));
 }
