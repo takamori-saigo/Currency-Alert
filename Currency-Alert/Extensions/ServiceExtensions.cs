@@ -3,6 +3,7 @@ using Contract;
 using LoggerService;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using Service;
 using Service.Contract;
 
 namespace Currency_Alert.Extensions;
@@ -31,10 +32,10 @@ public static class ServiceExtensions
             options.UseNpgsql(builderConfiguration.GetConnectionString("DefaultConnection")));
 
     public static void ConfigureRepositoryManager(this IServiceCollection service) =>
-        service.AddScoped<IManagerRepository, RepositoryManager>();
+        service.AddScoped<IManagerRepository, ManagerRepository>();
 
     public static void ConfigureServiceManager(this IServiceCollection service) =>
-        service.AddScoped<IServiceManager, IServiceManager>();
+        service.AddScoped<IServiceManager, ServiceManager>();
 
     public static void ConfigureControllers(this IServiceCollection service) =>
         service.AddControllers().AddApplicationPart(typeof(AssemblyReference).Assembly);

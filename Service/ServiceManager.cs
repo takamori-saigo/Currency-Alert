@@ -1,4 +1,5 @@
 using AutoMapper;
+using Contract;
 using Repository;
 using Service.Contract;
 
@@ -8,7 +9,7 @@ public class ServiceManager: IServiceManager
 {
     private readonly Lazy<ICurrenciesService> _currencies;
     
-    public ServiceManager(RepositoryManager repositoryManager, IMapper mapper)
+    public ServiceManager(IManagerRepository repositoryManager, IMapper mapper)
     {
         _currencies =  new Lazy<ICurrenciesService>(() => new CurrenciesService(repositoryManager, mapper));
     }

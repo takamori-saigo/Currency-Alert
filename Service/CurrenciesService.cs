@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Contract;
 using Repository;
 using Service.Contract;
 using Shared;
@@ -7,9 +8,9 @@ namespace Service;
 
 public class CurrenciesService: ICurrenciesService
 {
-    private readonly RepositoryManager  _repositoryManager;
+    private readonly IManagerRepository  _repositoryManager;
     private readonly IMapper _mapper;
-    public CurrenciesService(RepositoryManager repositoryManager, IMapper mapper)
+    public CurrenciesService(IManagerRepository repositoryManager, IMapper mapper)
     {
         _repositoryManager = repositoryManager;
         _mapper =  mapper;

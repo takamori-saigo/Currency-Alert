@@ -2,11 +2,11 @@ using Contract;
 
 namespace Repository;
 
-public class RepositoryManager: IManagerRepository
+public class ManagerRepository: IManagerRepository
 {
     private readonly Lazy<ICurrenciesRepository> _currencies;
     
-    public RepositoryManager(CurrencyAlertContext context)
+    public ManagerRepository(CurrencyAlertContext context)
     {
         _currencies =  new Lazy<ICurrenciesRepository>(() => new CurrenciesRepository(context));
     }
