@@ -14,15 +14,18 @@ builder.Services.ConfigureSqlConnection(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureControllers();
+builder.Services.ConfigureAutoMapper();
 
 var app = builder.Build();
+
 if (app.Environment.IsProduction())
     app.UseHsts();
+
 app.UseHttpsRedirection();
 
 app.UseCors("CorsPolicy");
 
-app.UseForwardedHeaders(new ForwardedHeadersOptions{ForwardedHeaders = ForwardedHeaders.All} );
+app.UseForwardedHeaders(new ForwardedHeadersOptions{ForwardedHeaders = ForwardedHeaders.All});
 
 app.UseAuthentication();
 

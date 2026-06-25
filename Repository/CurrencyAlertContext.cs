@@ -5,7 +5,7 @@ namespace Repository;
 
 public class CurrencyAlertContext: DbContext
 {
-    public DbSet<Currencies> Currencies { get; set; }
+    public DbSet<Currency> Currencies { get; set; }
 
     public CurrencyAlertContext(DbContextOptions<CurrencyAlertContext> options): 
         base(options){}

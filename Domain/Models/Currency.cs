@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models;
 
-public class Currencies
+public class Currency
 {
     [Column("CurrencyId")]
     public Guid Id { get; set; }
