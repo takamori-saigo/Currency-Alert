@@ -1,5 +1,7 @@
-﻿namespace Service;
+﻿using Service.Contract;
 
-public class CurrenciesService
+namespace Service;
+
+public class CurrenciesService: ICurrenciesService
 {
 }
