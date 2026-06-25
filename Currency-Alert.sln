@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Currency-Alert", "Currency-Alert\Currency-Alert.csproj", "{1F3DB7DC-88DE-4A3B-977F-E3345529B596}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "Contract\Contract.csproj", "{9A89066B-FEC3-4688-9CC8-4F6629F8740F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{0E619EA0-BB2E-4B5B-BC80-547B910CB5A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{1F3DB7DC-88DE-4A3B-977F-E3345529B596}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F3DB7DC-88DE-4A3B-977F-E3345529B596}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F3DB7DC-88DE-4A3B-977F-E3345529B596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A89066B-FEC3-4688-9CC8-4F6629F8740F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A89066B-FEC3-4688-9CC8-4F6629F8740F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A89066B-FEC3-4688-9CC8-4F6629F8740F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A89066B-FEC3-4688-9CC8-4F6629F8740F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E619EA0-BB2E-4B5B-BC80-547B910CB5A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E619EA0-BB2E-4B5B-BC80-547B910CB5A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E619EA0-BB2E-4B5B-BC80-547B910CB5A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E619EA0-BB2E-4B5B-BC80-547B910CB5A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

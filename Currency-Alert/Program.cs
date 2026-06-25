@@ -1,7 +1,13 @@
 
+using Currency_Alert.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
+using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(),"/nlog.config"));
+
+builder.Services.ConfigureLoggerManager();
 
 builder.Services.AddControllers();
 
