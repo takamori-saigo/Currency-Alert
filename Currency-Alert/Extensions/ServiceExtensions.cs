@@ -1,3 +1,4 @@
+using System.Reflection.Metadata;
 using Contract;
 using LoggerService;
 using Microsoft.EntityFrameworkCore;
@@ -16,17 +17,17 @@ public static class ServiceExtensions
             {
                 options.AddPolicy("CorsPolicy",
                     builder =>
-                    { 
+                    {
                         builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
                     });
             }
         );
 
     public static void ConfigureSqlConnection(this IServiceCollection service,
         ConfigurationManager builderConfiguration) =>
-        service.AddDbContext<CurrencyAlertContext>(options => 
+        service.AddDbContext<CurrencyAlertContext>(options =>
             options.UseNpgsql(builderConfiguration.GetConnectionString("DefaultConnection")));
 
     public static void ConfigureRepositoryManager(this IServiceCollection service) =>
@@ -34,4 +35,7 @@ public static class ServiceExtensions
 
     public static void ConfigureServiceManager(this IServiceCollection service) =>
         service.AddScoped<IServiceManager, IServiceManager>();
+
+    public static void ConfigureControllers(this IServiceCollection service) =>
+        service.AddControllers().AddApplicationPart(typeof(AssemblyReference).Assembly);
 }

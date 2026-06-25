@@ -1,4 +1,5 @@
 
+using System.Reflection.Metadata;
 using Currency_Alert.Extensions;
 using Microsoft.AspNetCore.HttpOverrides;
 using NLog;
@@ -12,8 +13,7 @@ builder.Services.ConfigureCors();
 builder.Services.ConfigureSqlConnection(builder.Configuration);
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
-
-builder.Services.AddControllers();
+builder.Services.ConfigureControllers();
 
 var app = builder.Build();
 if (app.Environment.IsProduction())
